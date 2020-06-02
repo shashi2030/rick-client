@@ -13,7 +13,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "2bd04614-b459-4afe-9aae-4c3e054ab6b5"
+    secure: "e3622139-8936-4203-9b4a-97fe5b4ffe4a"
   app: rick-client
   on: 
     branch: master
