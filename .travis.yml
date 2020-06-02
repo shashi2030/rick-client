@@ -8,8 +8,7 @@ before_install:
   - docker build -t shashi2030/rickandmontry -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true shashi2030/rickandmontry npm run test -- --coverage
-  - docker run -e CI=true shashi2030/rickandmontry npm run deploy
+  - docker run -e CI=true shashi2030/rickandmontry
 
 deploy:
   provider: pages
