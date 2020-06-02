@@ -8,6 +8,7 @@ before_install:
   - docker build -t shashi2030/rickandmontry -f Dockerfile.dev .
 
 script:
+  - docker run -it --name ricktest shashi2030/rickandmontry
   - docker run -e CI=true shashi2030/rickandmontry npm run test -- --coverage
   - docker run -e CI=true shashi2030/rickandmontry npm run deploy
 
