@@ -15,5 +15,5 @@ deploy:
   api_key:
     secure: "6f9a8de2-abe7-4c45-ab4c-31caf9c8451e"
   app: rick-client
-  on:
-    repo: shashi2030/rick-client/
+  on: 
+    branch: master
