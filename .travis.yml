@@ -1,20 +1,16 @@
 language: generic
 sudo: required
-
 services:
-  - docker
-
+- docker
 before_install:
-  - docker build -t shashi2030/rickandmontry -f Dockerfile.dev .
-
+- docker build -t shashi2030/rickandmontry -f Dockerfile.dev .
 script:
-  - docker run -e CI=true shashi2030/rickandmontry
-
+- docker run -e CI=true shashi2030/rickandmontry
 deploy:
   provider: heroku
   api_key:
-    secure: "IHR4R6oG9A8s0EMs3XMyxndw4L5LB3r0RC9rIaKf4wEFro4P2Vu4aB/SYDeTO1jtG2NCL94H64qswF3zM9eL17rjcV8YbeYvANLL5XtUVj9d0mcOCqIQ29fRnDDOTMDCO4M43t6UjEqP2Y3HyFTrKrDOy2R7+DKI0AfvCf2VlD77JHGzn0SYjrAVBD3fmBMKItPvIxCcnRyFg65uUC+HFFHlOWy6ziiPSl9Bvt4oWyEjf01GHBiixayoqro3Owm8piGdg4jBUvS0Tj52cO3GEiqhs7FyQHco+ZzSsfYCKNqiZ2LBUArrHcXV90ongEQ8n1RXpAxPAxqXcPet8JsUn57lYBZozdnF9LX5nfKuKXpFgD/s3IgWy2FkvobggQ3/NnTK+I06fxPpqQ5eP16LMEfxDUIk75AgJKqQEf4HnMjQn+RAytQ8QetQ4qRrqcsZ7/i/XEuJVaPiGt2L9thMltKuQep4XPi4+Da1DnQDflwNUkVgxTLm3ESC8QD9EN1Jz3ifi2tKQKnN6YWQMLLGvMZ+pptQGjOjkzGxRc3w1+2mOEUWmoenGPasv1hSGBoCXTVMx/FZZPGCZPky6UiHsHXVhcBxy4Lgv4g0kTQd6VqBs7M2F1vBOY0VWLnBtVn5xGnFg188GFn8XaCHimO4ymEXlcGFZy4OMyY7rMGK/Ac="
+    secure: mX12FuEQlMZoZDpCi37ny9aVdVdq+LKjR8WIZXQOOd+KB0zkKNKVdsK0vxySoZ9Zk55QYUUPFcpE/NEXG9aGh9eBFLDothwh46We33Xo5yPMcblwlDj/fzsC0R5eE0pPaCXPZN5gZ2WSM6dsXCm+cW01KfuSG1pRSWREJx3NIzwJQ2qEtngq5gB8ZYpJ1u7R33kcNkTZN0Z+m44byRP1OekFbkkUAgEUu1k/gwruEHS8boTzP43q4enlM90iw5jBcTvuBhZa8unYHZoYR6pJuqINOddThkq2b8rYaAZRgLueYqqD0aMQyZ33t7HHEiyCNNJOxCO+5gB/2bdabbDa++MWKrnzVZVeWHwd9vgpiGyNy7wo0eNjV97OajX5qPp/xuT0l77WfFG0zEVXJggUqd2WADxi0ttgeohHt10hguVNGt0wtaLwf7Ul4rWD0NzI+yIuM06jZOoGXyRGRz6BEBqwkjHu0X7aKIYx5b/W8iyUyy23MkpaF8Nzsu3sTYA331sgol4vSZo3HwLPefpgTZo6fcIJAjpYSjqCE7/2hGFBi0ffRCrMvgp0gTMwBoby3xBm3iCaI4isxuruq73Tl/9XsuXEDawUXnHeNFjVdKNDX0QjA9s7ujQyf1r4nUVuzJ4Is0YE7HeaycYU7ys82NrXsX4Dq7931aoBZUyg4ME=
   skip_cleanup: true
   app: rick-client
-  on: 
+  on:
     branch: master
