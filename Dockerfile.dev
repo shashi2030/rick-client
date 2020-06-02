@@ -13,3 +13,5 @@ RUN rm -rf node_modules
 RUN npm install
 
 CMD npm run build
+
+COPY build /app
