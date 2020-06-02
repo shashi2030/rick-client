@@ -13,7 +13,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "e3622139-8936-4203-9b4a-97fe5b4ffe4a"
+    secure: $heroku_token
   skip_cleanup: true
   app: rick-client
   on: 
