@@ -13,7 +13,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "lFIq6qMJars4mud8dmVAJWYoQEv1HI6hKXpphAComcDRFYrBoiTwNGoBUKAqTUdgUxYZwnC35+ndcGbctM2ARsWQUPJbwQpS3wTjt4JFhNyR5ntGjvz8BNDd269HmAmoL2HSYnrQnSSEFyV+2IXK2eU/Tk3Qpt7qrL6tXqVKwqoltr0pUlhLc6hQwd7uVdJeCzyits//50siSA1jGrE+FrHI+PbHDQLuISYTy+/9GHDu45UILA9iznpyOnmN3BfbSlLWDDwbjXSAIR1rZcf1fKiZYaQlkGdSWppaRZYQpacJdP0n37UwF+0plme1mLxPa/LtLu9DaRUKLL1aHAQV4divLcFhq2a2nLLa6XPlOAiUZAz4/FI/nRL98AE7Qi/15EHhIewGeugVFIBel7mzAXjQFOX8zywFojAzEFkmloLJaElrFQHhNdy/pRuTRjYt+BqdXQe1nvKHiKUi7FH9KWkrHn1iHP3OOTHkRRKroiNfi/2kCcHdsZRhPO4+09Nm+/8iij3SJgpwRcTsA4s36lUAEgyGCL40G4Ssv9ZXb81QCroSL4DcyCO/f8Fmf6m1rExeL8R4E2Hf3KYsfG+9E1vuwNV3S6rNsXZaJCY6W0JETde2bU2N2EdZSMPSUXZgM8AEsxPXYJ4rBxSiw07PT6GYbxwGHuKhMvPERjmfVJo="
+    secure: $heroku_token
   skip_cleanup: true
   app: rick-client
   on: 
