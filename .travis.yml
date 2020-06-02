@@ -11,7 +11,7 @@ script:
   - docker run -e CI=true shashi2030/rickandmontry
 
 before_deploy:
-  - docker run -e shashi2030/rickandmontry npm run build
+  - docker run -it shashi2030/rickandmontry npm run build
 
 deploy:
   provider: pages
