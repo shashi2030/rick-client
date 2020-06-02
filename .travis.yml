@@ -9,3 +9,4 @@ before_install:
 
 script:
   - docker run -e CI=true shashi2030/rickandmontry npm run test -- --coverage
+  - docker run -e CI=true shashi2030/rickandmontry npm run build
