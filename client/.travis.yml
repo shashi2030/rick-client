@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t shashi2030/rickandmontry -f ./client/Dockerfile.dev ./client
+  - docker build -t shashi2030/rickandmontry -f Dockerfile.dev .
 
 script:
   - docker run -e CI=true shashi2030/rickandmontry npm run test -- --coverage
@@ -15,6 +15,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
-  local_dir: ./client/build
+  local_dir: build
   on:
     branch: master
