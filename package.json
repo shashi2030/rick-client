@@ -28,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -d ./build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "preinstall": "npx npm-force-resolutions"
   },
