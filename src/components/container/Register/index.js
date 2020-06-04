@@ -21,7 +21,11 @@ const initialState = {
     serverError: "",
     userMsg: "",
     hideMsg: false,
-    hideMsgSuccess:false
+    hideMsgSuccess:false,
+    userLength:false,
+    passwordLength:false,
+    fieldLengthError:"must be 8 characters",
+    
 }
 
 class Register extends Component {
@@ -42,7 +46,16 @@ class Register extends Component {
         this.setState({
             [name]: value
         }, () => {
+            const { userName, password} = this.state;
+            const userLengthError = userName.length < 8 ? true : false;
+            const passwordLengthError = password.length < 8 ? true : false;
+            if(userName.length )
+            this.setState({
+                userLength:userLengthError,
+                passwordLength:passwordLengthError
+            })
             if (this.state.hideMsg) {
+                if(userName.length )
                 this.setState({
                     hideMsg: false
                 })
@@ -66,10 +79,15 @@ class Register extends Component {
      */
     handleSubmit = (e) => {
         e.preventDefault();
+        const { name, userName, password} = this.state;
+        const userLengthError = userName.length < 8 ? true : false;
+        const passwordLengthError = password.length < 8 ? true : false;
         this.setState({
-            submitted: true
+            submitted: true,
+            userLength:userLengthError,
+            passwordLength:passwordLengthError
         });
-        const { name, userName, password } = this.state;
+        
         const data = {
             name: name,
             username: userName,
@@ -110,7 +128,9 @@ class Register extends Component {
 
     }
     render() {
-        const { name, userName, password, submitted, serverError, userMsg, hideMsg, hideMsgSuccess } = this.state;
+        const { name, userName, password, submitted, 
+            serverError, userMsg, hideMsg, hideMsgSuccess,
+            passwordLength, userLength, fieldLengthError } = this.state;
         return (
             <Container component="main" maxWidth="xs">
                 <div className="login-wrapper">
@@ -145,7 +165,8 @@ class Register extends Component {
                             size="small"
                             value={userName}
                             onChange={this.handleChange}
-                            error={!userName && submitted}
+                            error={userLength  && submitted}
+                            helperText={userLength ? `Username ${fieldLengthError}` : null}
                         />
                         <TextField
                             variant="outlined"
@@ -159,7 +180,8 @@ class Register extends Component {
                             value={password}
                             size="small"
                             onChange={this.handleChange}
-                            error={!password && submitted}
+                            error={passwordLength && submitted}
+                            helperText={passwordLength ? `Password ${fieldLengthError}` : null}
                         />
                         <Grid container spacing={2} justify="center">
                             <Grid item xs={12} sm={6} >
