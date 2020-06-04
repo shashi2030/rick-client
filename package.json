@@ -37,7 +37,6 @@
     "express": "^4.17.1",
     "file-loader": "4.3.0",
     "fs-extra": "^8.1.0",
-    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "4.0.0-beta.11",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
@@ -79,7 +78,6 @@
     "test": "node scripts/test.js",
     "serve": "serve -d ./build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
