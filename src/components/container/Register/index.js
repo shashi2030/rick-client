@@ -94,7 +94,6 @@ class Register extends Component {
             password: password
         }
         if (name && userName && password && !userLength && !passwordLength) {
-            console.log(".........")
             baseService.post('/register', data).then(response => {
                 if (response.status === 200) {
                     this.setState({
