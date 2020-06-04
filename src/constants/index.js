@@ -1,4 +1,4 @@
-export const baseUrl = 'http://localhost:4000';
+export const baseUrl = 'https://rick-server.herokuapp.com';
 
 // Error Msg
 export const duplicateUser = 'Duplicate Username';
