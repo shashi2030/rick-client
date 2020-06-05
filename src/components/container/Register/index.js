@@ -49,7 +49,7 @@ class Register extends Component {
             const { userName, password} = this.state;
             const userLengthError = userName.length < 8 ? true : false;
             const passwordLengthError = password.length < 8 ? true : false;
-            if(userName.length )
+            if((userName.length || password.length) && (!userLengthError || !passwordLengthError))
             this.setState({
                 userLength:userLengthError,
                 passwordLength:passwordLengthError
@@ -79,7 +79,7 @@ class Register extends Component {
      */
     handleSubmit = (e) => {
         e.preventDefault();
-        const { name, userName, password, userLength, passwordLength} = this.state;
+        const { name, userName, password} = this.state;
         const userLengthError = userName.length < 8 ? true : false;
         const passwordLengthError = password.length < 8 ? true : false;
         this.setState({
@@ -93,7 +93,7 @@ class Register extends Component {
             username: userName,
             password: password
         }
-        if (name && userName && password && !userLength && !passwordLength) {
+        if (name && userName && password && !userLengthError && !passwordLengthError) {
             baseService.post('/register', data).then(response => {
                 if (response.status === 200) {
                     this.setState({
