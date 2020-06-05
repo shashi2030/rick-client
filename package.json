@@ -27,6 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "serve": "serve -d ./build",
+    "predeploy": "npm run build",
     "preinstall": "npx npm-force-resolutions"
   },
   "eslintConfig": {
