@@ -3,13 +3,10 @@ import ReactDOM from 'react-dom';
 import App from './components/container/App';
 import './assets/css/style.scss';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.Fragment>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </React.Fragment>,
   document.getElementById('root')
 );
